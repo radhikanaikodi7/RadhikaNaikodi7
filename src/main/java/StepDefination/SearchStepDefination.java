@@ -95,4 +95,14 @@ public void asserts_forJob_Title_Job_Location_Job_ID()
 	Assert.assertEquals(true, driver.findElement(By.xpath("//span[text()='Senior Test Automation Engineer ']/../../../../p//span/span[text()='Job Type']")).isDisplayed());	
 }
 
+@Then("click on job title and click on Apply now")
+public void click_on_job_title_and_click_on_Apply_now() throws InterruptedException
+{
+	//click on job
+	driver.findElement(By.xpath("//span[text()='Senior Test Automation Engineer ']")).click();
+	Thread.sleep(20);
+	WebElement ApplyNow=new WebDriverWait(driver,20).until(ExpectedConditions.presenceOfElementLocated(By.xpath("//span[text()='Senior Test Automation Engineer ']")));
+	//Click on Apply Now
+	ApplyNow.click();
+}
 }
